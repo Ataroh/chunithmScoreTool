@@ -9,11 +9,11 @@
         const score = entry.querySelector('.play_musicdata_score_text')?.innerText.trim() ?? '';
         // 難易度（画像srcのファイル名から判別）
         const levelImgSrc = entry.querySelector('.play_track_result img')?.src ?? '';
-        const level = levelImgSrc.includes('ultimate') ? 'ULTIMA' :
-                      levelImgSrc.includes('master') ? 'MASTER' :
-                      levelImgSrc.includes('expert') ? 'EXPERT' :
-                      levelImgSrc.includes('advanced') ? 'ADVANCED' :
-                      levelImgSrc.includes('basic') ? 'BASIC' : 'UNKNOWN';
+        const level = levelImgSrc.includes('ultimate') ? 'ULT' :
+                      levelImgSrc.includes('master') ? 'MAS' :
+                      levelImgSrc.includes('expert') ? 'EXP' :
+                      levelImgSrc.includes('advanced') ? 'ADV' :
+                      levelImgSrc.includes('basic') ? 'BAS' : 'UNKNOWN';
         // クリアランプ
         const lampImg = entry.querySelector('img[src*="icon_clear"], img[src*="icon_hard"], img[src*="icon_absolute"]');
         const lamp = lampImg ? (lampImg.src.includes('clear') ? 'CLEAR' :
