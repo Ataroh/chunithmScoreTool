@@ -16,9 +16,12 @@
                       levelImgSrc.includes('basic') ? 'BAS' : 'UNKNOWN';
         // クリアランプ
         const lampImg = entry.querySelector('img[src*="icon_clear"], img[src*="icon_hard"], img[src*="icon_absolute"]');
-        const lamp = lampImg ? (lampImg.src.includes('clear') ? 'CLEAR' :
-            lampImg.src.includes('hard') ? 'HARD' :
-                lampImg.src.includes('absolute') ? 'ABSOLUTE' : '???') : '';
+        const lamp = lampImg ? (
+                        lampImg.src.includes('clear') ? 'CLR' :
+                        lampImg.src.includes('hard') ? 'HRD' :
+                        lampImg.src.includes('absolute') ? 'ABS' :
+                        lampImg.src.includes('catastrophy') ? 'CTS' : 'UNKNOWN'
+                    ) : '';
         // AJ/FC検出
         const fcIcon = entry.querySelector('img[src*="icon_fullcombo"]');
         const ajIcon = entry.querySelector('img[src*="icon_alljustice"]');
