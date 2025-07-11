@@ -31,11 +31,11 @@
 
     /*
     console.log('取得したデータ:', results);
-    alert('${results.length}件の詳細データを取得しConsoleに出力しました');
+    alert(`${results.length}件の詳細データを取得しConsoleに出力しました`);
     */
 
     // 送信前に確認ダイアログを表示
-    const confirmSend = window.confirm('データを送信しますか? (${results.length}件)');
+    const confirmSend = window.confirm(`データを送信しますか? (${results.length}件)`);
     if (!confirmSend) {
         //alert('送信はキャンセルされました');
         return;
