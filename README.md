@@ -1,0 +1,2 @@
+# chunithmScoreTool
+bookmarklet+gasでCHUNITHMのスコアデータ等をスプレッドシートに記録するツールです。
