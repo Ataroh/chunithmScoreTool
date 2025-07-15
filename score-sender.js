@@ -13,7 +13,8 @@
                       levelImgSrc.includes('master') ? 'MAS' :
                       levelImgSrc.includes('expert') ? 'EXP' :
                       levelImgSrc.includes('advanced') ? 'ADV' :
-                      levelImgSrc.includes('basic') ? 'BAS' : 'UNKNOWN';
+                      levelImgSrc.includes('basic') ? 'BAS' :
+                      levelImgSrc.includes('worldsend') ? 'WE' : 'UNKNOWN';
         // クリアランプ
         const lampImg = entry.querySelector('img[src*="icon_clear"], img[src*="icon_hard"], img[src*="icon_absolute"]');
         const lamp = lampImg ? (
