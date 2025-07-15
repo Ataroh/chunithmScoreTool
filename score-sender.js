@@ -1,3 +1,4 @@
+const version = 'v'+'1.0';
 (async () => {
     const entries = [...document.querySelectorAll('.frame02.w400')];
     const results = entries.map(entry => {
@@ -26,7 +27,7 @@
         // AJ/FC検出
         const fcIcon = entry.querySelector('img[src*="icon_fullcombo"]');
         const ajIcon = entry.querySelector('img[src*="icon_alljustice"]');
-        const status = ajIcon ? 'AJ' : fcIcon ? 'FC' : '-';
+        const status = ajIcon ? 'AJ' : fcIcon ? 'FC' : '';
 
         return { date, title, level, score, status, lamp };// track, rank
     });
@@ -39,7 +40,7 @@
     */
 
     // 送信前に確認ダイアログを表示
-    const confirmSend = window.confirm(`データを送信しますか? (${results.length}件)`);
+    const confirmSend = window.confirm(`chunithm score tool ${version}\nデータを送信しますか?`);// (${results.length}件)
     if (!confirmSend) {
         //alert('送信はキャンセルされました');
         return;
