@@ -1,5 +1,5 @@
-const version = "v"+"1.1";
 (async () => {
+    const version = "v"+"1.1.1";
     const entries = [...document.querySelectorAll(".frame02.w400")];
     const results = entries.map(entry => {
         // 楽曲ごとのプレイ日時
