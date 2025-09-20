@@ -1,5 +1,5 @@
 (async () => {
-    const version = "v"+"1.2";
+    const version = "v"+"1.2.1";
     const entries = [...document.querySelectorAll(".frame02.w400")];
     const results = entries.map(entry => {
         // 楽曲ごとのプレイ日時
@@ -50,9 +50,9 @@
         <div style="background:#fff;padding:20px 30px;border-radius:12px;text-align:center;min-width:300px;box-shadow:0 4px 20px rgba(0,0,0,0.3);">
             <div id="bm-title" style="font-size:20px;font-weight:bold;color:#333;margin-bottom:8px;">CHUNITHM スコアツール</div>
             <div id="bm-message" style="font-size:16px;color:#333;margin-bottom:12px;">起動中</div>
-            <div>
+            <div style="display:flex;justify-content:center;align-items:center;">
                 <button id="bm-close" style="padding:8px 20px;background:#fff;color:#1970e2;border:1px solid #aaa;border-radius:6px;font-size:14px;cursor:pointer;margin:5px;">閉じる</button>
-                <button id="bm-send" disabled style="padding:8px 20px;background:#1970e2;color:#fff;border:1px solid #aaa;border-radius:6px;font-size:14px;cursor:pointer;margin:5px;display:none">送信</button>
+                <button id="bm-send" disabled style="padding:8px 20px;background:#1970e2;color:#fff;border:1px solid #aaa;border-radius:6px;font-size:14px;cursor:pointer;margin:5px;display:none;">送信</button>
             </div>
             <div id="bm-version" style="font-size:12px;color:#000;margin-top:4px;margin-bottom:0px;text-align:right"></div>
         </div>
@@ -72,8 +72,6 @@
     if (!webhookURL) {
         modal.remove();
         //alert("[ERROR] Webhook URL が定義されていません");
-        $send.disabled = true;
-        $send.style.display = "none";
         $msg.textContent = "[ERROR] Webhook URL が定義されていません"
         $close.style.margin = "4px auto 0";
         $close.disabled = false;
@@ -88,7 +86,7 @@
             $ver.textContent = `${version} (GAS v${data.version})`;
             $msg.textContent = "データを送信しますか？";
             $send.disabled = false;
-            $send.style.display = "block";
+            $send.style.display = "inline-block";
         })
         .catch(error => {
             $msg.textContent = "バージョン取得失敗";
